@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins:wght@400;500;600&display=swap');
 
+html {
+  --red: red;
+}
+
 body {
   box-sizing: border-box;
   margin: 0;
@@ -17,6 +21,7 @@ code {
 }
 
 #root {
+  display: flex;
   width: 100vw;
   height: 100vh;
 }

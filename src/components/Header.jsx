@@ -6,8 +6,10 @@ import Select, { components } from 'react-select';
 import { ReactComponent as TriangleIcon } from '../assets/triangle.svg';
 import { Icon } from '@iconify/react';
 import Button from './Button';
+import { Link } from 'react-router-dom';
 
 const Container = styled.header`
+  /* flex-grow: 1; */
   background-color: white;
   padding: 0 42px;
 `;
@@ -23,6 +25,7 @@ const SelectContainer = styled.div`
 `;
 
 const SelectStyled = styled(Select)`
+  min-width: 200px;
   width: 260px;
   height: 44px;
 
@@ -154,7 +157,9 @@ const Header = () => {
           <Icons>
             <MenuIcon icon="bytesize:bell" />
             <MenuIcon icon="ant-design:question-circle-outlined" />
-            <MenuIcon icon="carbon:settings" />
+            <Link to="/settings">
+              <MenuIcon icon="carbon:settings" />
+            </Link>
           </Icons>
           <SignButton>Sign&nbsp;Out</SignButton>
         </HeaderMenu>

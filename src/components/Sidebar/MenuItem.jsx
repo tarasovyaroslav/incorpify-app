@@ -7,6 +7,7 @@ const Container = styled.div`
   align-items: center;
   /* width: 100%; */
   padding: 8px;
+  padding-right: 18px;
   padding-left: 30px;
   /* text-align: center; */
   background-color: ${({ active }) => (active ? '#015c8c' : '')};

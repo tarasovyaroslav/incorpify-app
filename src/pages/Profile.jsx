@@ -1,8 +1,17 @@
-import { Icon } from '@iconify/react';
 import React from 'react';
 import styled from 'styled-components';
-import Button from '../components/Button';
-import CompanyInfo from '../components/CompanyInfo';
+
+import Button from 'features/Button';
+
+import CompanyInfo from 'components/Main/Content/CompanyInfo';
+import InfoItem from 'components/Main/Content/Profile/InfoItem';
+import ChangeInfo from 'components/Main/Content/Profile/ChangeInfo';
+import RightItem from 'components/Main/Content/Profile/RightItem';
+
+import { ReactComponent as StatusIcon } from 'components/Main/Content/Profile/assets/status.svg';
+import { ReactComponent as DateIcon } from 'components/Main/Content/Profile/assets/date.svg';
+import { ReactComponent as OrderIcon } from 'components/Main/Content/Profile/assets/order.svg';
+import Card from 'features/Card';
 
 const Info = styled.div`
   display: flex;
@@ -13,37 +22,6 @@ const Info = styled.div`
   padding: 21px;
 `;
 
-const ItemContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  padding: 10px 0;
-
-  font-family: inherit;
-  font-weight: 500;
-  font-size: 1rem;
-`;
-
-const Prop = styled.div`
-  min-width: 170px;
-  text-align: right;
-  margin-right: 40px;
-  color: #7c8db5;
-`;
-const Value = styled.div`
-  flex-grow: 1;
-  color: #25396f;
-  font-weight: 400;
-`;
-
-const InfoItem = ({ title, value }) => {
-  return (
-    <ItemContainer>
-      <Prop>{title}:</Prop>
-      <Value>{value}</Value>
-    </ItemContainer>
-  );
-};
-
 const ContentContainer = styled.div`
   display: flex;
   width: 100%;
@@ -51,7 +29,6 @@ const ContentContainer = styled.div`
 `;
 
 const LeftSide = styled.div`
-  /* max-width: 810px; */
   display: flex;
   flex-grow: 1;
   flex-direction: column;
@@ -65,36 +42,13 @@ const RightSide = styled.div`
   justify-content: space-between;
 `;
 
-const ChangeInfo = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  color: #25396f;
-  font-weight: 500;
-  background-color: white;
-  border: 1px solid #dbe4f0;
-  border-radius: 8px;
-  padding: 21px;
-  min-width: 520px;
-  height: 50px;
-`;
-
-const RightItem = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  background-color: white;
-  border: 1px solid #dbe4f0;
-  border-radius: 8px;
-  padding: 21px;
-`;
-
-const DissolveBusiness = styled(RightItem)`
+const DissolveBusiness = styled(Card)`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 92px;
+  gap: 16px;
+  height: 136px;
+  padding: 20px;
   color: #25396f;
 `;
 
@@ -103,38 +57,15 @@ const DissolveButton = styled(Button)`
   color: white;
 `;
 
-const AmendmentButton = styled(Button)`
-  font-size: 1rem;
-  font-weight: 500;
-  font-family: inherit;
-  color: #0181b6;
-  border: 1px solid #0181b6;
-  background-color: transparent;
-`;
-
-const RightItemContent = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-
-const RightItemTitle = styled.div`
-  font-weight: 400;
-  color: #7c8db5;
-`;
-
-const RightItemValue = styled.div`
-  color: ${({ color }) => color || '#25396F'};
-  font-size: 1.25rem;
-`;
-
-const IconStyled = styled(Icon)`
-  background-color: ${({ bgcolor }) => bgcolor || 'transparent'};
-  border-radius: 50%;
-  overflow: visible;
-  padding: 10px;
-  width: 24px;
-  height: 24px;
-`;
+const infoItems = [
+  { id: 1, title: 'Business Name', value: 'Business Name' },
+  { id: 2, title: 'DBA', value: 'DBA' },
+  { id: 3, title: 'Owner', value: 'Owner' },
+  { id: 4, title: 'Physical Address', value: 'Physical Address' },
+  { id: 5, title: 'Type of Business', value: 'Type of Business' },
+  { id: 6, title: '# of Members', value: '# of Members' },
+  { id: 7, title: 'Tax Classification', value: 'Tax Classification' },
+];
 
 const Profile = () => {
   return (
@@ -144,69 +75,36 @@ const Profile = () => {
       <ContentContainer>
         <LeftSide>
           <Info>
-            <InfoItem
-              title="Business Name"
-              value={'Business Name'}
-            ></InfoItem>
-            <InfoItem title="DBA" value={'DBA'}></InfoItem>
-            <InfoItem title="Owner" value={'Owner'}></InfoItem>
-            <InfoItem
-              title="Physical Address"
-              value={'Physical Address'}
-            ></InfoItem>
-            <InfoItem
-              title="Type of Business"
-              value={'Type of Business'}
-            ></InfoItem>
-            <InfoItem
-              title="# of Members"
-              value={'# of Members'}
-            ></InfoItem>
-            <InfoItem
-              title="Tax Classification"
-              value={'Tax Classification'}
-            ></InfoItem>
+            {infoItems.map(({ id, title, value }) => (
+              <InfoItem key={id} title={title} value={value} />
+            ))}
           </Info>
-          <ChangeInfo>
-            Need to make changes to this Information?
-            <br />
-            <AmendmentButton>File an amendment</AmendmentButton>
-          </ChangeInfo>
+          <ChangeInfo />
         </LeftSide>
+
         <RightSide>
-          <RightItem>
-            <IconStyled
-              icon="bi:eye"
-              color="#07CEA4"
-              bgcolor="#E6FAF6"
-            ></IconStyled>
-            <RightItemContent>
-              <RightItemTitle>Status</RightItemTitle>
-              <RightItemValue color="#07CEA4">Active</RightItemValue>
-            </RightItemContent>
-          </RightItem>
-          <RightItem>
-            <IconStyled
-              icon="uiw:date"
-              color="#FC782C"
-              bgcolor="#FFF1EA"
-            ></IconStyled>
-            <RightItemContent>
-              <RightItemTitle>Date Created</RightItemTitle>
-              <RightItemValue>12/16/2021</RightItemValue>
-            </RightItemContent>
-          </RightItem>
-          <RightItem>
-            <IconStyled
-              icon="bi:bag-check"
-              color="#9B54E1"
-              bgcolor="#F5EEFC"
-            ></IconStyled>
-            <RightItemContent>
-              <RightItemTitle>Order</RightItemTitle>
-              <RightItemValue>#273241</RightItemValue>
-            </RightItemContent>
-          </RightItem>
+          <RightItem
+            icon={<StatusIcon />}
+            title="Status"
+            value="Active"
+            iconColor="#07CEA4"
+            textColor="#07CEA4"
+          />
+
+          <RightItem
+            icon={<DateIcon />}
+            title="Date Created"
+            value="12/16/2021"
+            iconColor="#FC782C"
+          />
+
+          <RightItem
+            icon={<OrderIcon />}
+            title="Order"
+            value="12/16/2021"
+            iconColor="#9B54E1"
+          />
+
           <DissolveBusiness>
             Need to Close Business?
             <DissolveButton>Dissolve Business</DissolveButton>

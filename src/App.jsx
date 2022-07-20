@@ -2,18 +2,21 @@ import React from 'react';
 import { useLocation } from 'react-router-dom';
 
 import styled from 'styled-components';
-import Content from '../components/Content';
 
-import Header from '../components/Header';
-import Main from '../components/Main';
-import Sidebar from '../components/Sidebar';
+import Sidebar from 'components/Sidebar/Sidebar';
+import Main from 'components/Main/Main';
+import Header from 'components/Main/Header/Header';
+import Content from 'components/Main/Content/Content';
 
 const Container = styled.div`
   display: flex;
+  /* justify-contens: center; */
+  /* max-width: 1440px; */
   width: 100%;
   /* flex-grow: 1; */
   /* height: 100%; */
-  min-height: 768px;
+  /* min-height: 768px; */
+  min-height: 667px;
   font-family: 'Poppins', sans-serif;
 `;
 

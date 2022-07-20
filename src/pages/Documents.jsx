@@ -1,14 +1,16 @@
-import { ReactComponent as Icon1 } from '../assets/articles.svg';
-import { ReactComponent as Icon2 } from '../assets/statement.svg';
-import { ReactComponent as Icon3 } from '../assets/filing.svg';
-import { ReactComponent as Icon4 } from '../assets/annual.svg';
-import { ReactComponent as Icon5 } from '../assets/ein.svg';
+import { ReactComponent as IconArticles } from 'components/Main/Content/Documents/assets/articles.svg';
+import { ReactComponent as IconStatement } from 'components/Main/Content/Documents/assets/statement.svg';
+import { ReactComponent as IconFiling } from 'components/Main/Content/Documents/assets/filing.svg';
+import { ReactComponent as IconAnnual } from 'components/Main/Content/Documents/assets/annual.svg';
+import { ReactComponent as IconEin } from 'components/Main/Content/Documents/assets/ein.svg';
 
 import React from 'react';
 import styled from 'styled-components';
 
-import CompanyInfo from '../components/CompanyInfo';
-import Button from '../components/Button';
+import CompanyInfo from 'components/Main/Content/CompanyInfo';
+import Button from 'features/Button';
+import Card from 'features/Card';
+import IconRounded from 'features/IconRounded/IconRounded';
 
 const ContentContainer = styled.div`
   display: flex;
@@ -33,40 +35,25 @@ const DownloadButton = styled(Button)`
   min-width: 180px;
 `;
 
-const IconContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: ${({ bgcolor }) => bgcolor || 'transparent'};
-  border-radius: 50%;
-  overflow: visible;
-  /* padding: 10px; */
-  width: 110px;
-  height: 110px;
-`;
-
-const CardStyled = styled.div`
-  box-sizing: border-box;
-  /* gap: 12px; */
-  border-radius: 8px;
-  padding: 20px;
-  background-color: white;
-  border: 1px solid #dbe4f0;
-
-  display: flex;
+const CardStyled = styled(Card)`
   flex-direction: column;
-  /* flex-grow: 0; */
   width: 252px;
   height: 252px;
   justify-content: space-between;
-  align-items: center;
+
+  padding: 20px;
 `;
 
-const Card = ({ title, icon, bgcolor }) => {
+const DocumentCard = ({ title, icon, color }) => {
   return (
     <CardStyled>
       <Title>{title}</Title>
-      <IconContainer bgcolor={bgcolor}>{icon}</IconContainer>
+      <IconRounded
+        icon={icon}
+        color={color}
+        size="110px"
+        padding="25px"
+      />
       <DownloadButton>Download PDF</DownloadButton>
     </CardStyled>
   );
@@ -77,27 +64,31 @@ const Documents = () => {
     <>
       <CompanyInfo />
       <ContentContainer>
-        <Card
-          icon={<Icon1 />}
+        <DocumentCard
+          icon={<IconArticles />}
           title="Articles of Incorporation"
-          bgcolor="#E6FAF6"
+          color="#07CEA4"
         />
-        <Card
-          icon={<Icon2 />}
+        <DocumentCard
+          icon={<IconStatement />}
           title="Statement of Organizer"
-          bgcolor="#FFF1EA"
+          color="#FC782C"
         />
-        <Card
-          icon={<Icon3 />}
+        <DocumentCard
+          icon={<IconFiling />}
           title="Filing Receipt"
-          bgcolor="#F5EEFC"
+          color="#9B54E1"
         />
-        <Card
-          icon={<Icon4 />}
+        <DocumentCard
+          icon={<IconAnnual />}
           title="Annual Report"
-          bgcolor="#FFEDF3"
+          color="#FE4A8B"
         />
-        <Card icon={<Icon5 />} title="EIN" bgcolor="#EEEDFC" />
+        <DocumentCard
+          icon={<IconEin />}
+          title="EIN"
+          color="#524FE1"
+        />
       </ContentContainer>
     </>
   );

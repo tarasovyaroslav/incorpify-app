@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import CompanyInfo from '../components/CompanyInfo';
+
+import CompanyInfo from 'components/Main/Content/CompanyInfo';
+import Card from 'features/Card';
 
 const ContentContainer = styled.div`
   display: flex;
@@ -9,15 +11,12 @@ const ContentContainer = styled.div`
   gap: 30px;
 `;
 
-const CardStyled = styled.div`
+const CardStyled = styled(Card)`
   display: flex;
   flex-direction: column;
+  align-items: stretch;
   box-sizing: border-box;
   height: 300px;
-  /* gap: 12px; */
-  border-radius: 8px;
-  background-color: white;
-  border: 1px solid #dbe4f0;
 `;
 
 const CardHeader = styled.div`
@@ -49,7 +48,7 @@ const CardItem = styled.li`
   font-size: 1rem;
 `;
 
-const Card = ({ title }) => {
+const CardContainer = ({ title }) => {
   return (
     <CardStyled>
       <CardHeader>{title}</CardHeader>
@@ -72,11 +71,11 @@ const Card = ({ title }) => {
   );
 };
 
-const RequiredActions = styled(Card)`
+const RequiredActions = styled(CardContainer)`
   /* flex-grow: 1; */
 `;
-const ImportantDates = styled(Card)``;
-const ComplianceCalendar = styled(Card)`
+const ImportantDates = styled(CardContainer)``;
+const ComplianceCalendar = styled(CardContainer)`
   flex-grow: 1;
 `;
 
@@ -90,7 +89,6 @@ const LeftSide = styled.div`
 const RightSide = styled.div`
   flex-grow: 0;
   width: 300px;
-  height: ;
 `;
 
 const ActionRequired = () => {

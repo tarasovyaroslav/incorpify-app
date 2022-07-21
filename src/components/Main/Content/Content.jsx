@@ -9,7 +9,7 @@ import Services from 'pages/Services';
 import Mailbox from 'pages/Mailbox';
 import Billing from 'pages/Billing';
 import Support from 'pages/Support';
-import Settings from 'pages/Settings';
+import AccountSettings from 'pages/AccountSettings';
 // import Home from 'pages/Home';
 
 const Container = styled.section`
@@ -29,9 +29,12 @@ const Content = () => {
         <Route path="actions" element={<ActionRequired />} />
         <Route path="services" element={<Services />} />
         <Route path="mail" element={<Mailbox />} />
-        <Route path="billing" element={<Billing />} />
-        <Route path="support" element={<Support />} />
-        <Route path="settings" element={<Settings />} />
+        <Route path="profile/billing" element={<Billing />} />
+        <Route path="profile/support" element={<Support />} />
+        <Route
+          path="profile/settings"
+          element={<AccountSettings />}
+        />
         <Route
           path="*"
           element={<Navigate to="/profile" replace />}

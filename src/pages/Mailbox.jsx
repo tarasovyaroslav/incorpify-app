@@ -40,7 +40,8 @@ const HeaderItem = styled.div`
   width: 115px;
   height: 100%;
   &:first-child {
-    flex-grow: 1;
+    /* flex-grow: 1; */
+    min-width: 600px;
   }
 `;
 
@@ -72,8 +73,9 @@ const CardItemSection = styled.div`
   min-width: 115px;
   height: 100%;
   &:first-child {
-    flex-grow: 1;
-    width: 100%;
+    /* flex-grow: 1; */
+    /* width: 100%; */
+    min-width: 600px;
   }
 `;
 

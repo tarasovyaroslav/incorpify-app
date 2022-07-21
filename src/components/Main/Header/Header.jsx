@@ -99,7 +99,7 @@ const Header = () => {
           <Icons>
             <MenuIcon icon="bytesize:bell" />
             <MenuIcon icon="ant-design:question-circle-outlined" />
-            <Link to="/settings">
+            <Link to="/profile/settings">
               <MenuIcon icon="carbon:settings" />
             </Link>
           </Icons>

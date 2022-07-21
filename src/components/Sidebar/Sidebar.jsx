@@ -119,13 +119,13 @@ const Sidebar = ({ page }) => {
       <NewBusinessButton>Start New Business</NewBusinessButton>
 
       <SidebarFooter>
-        <LinkStyled to="/billing">
+        <LinkStyled to="/profile/billing">
           <MenuItem active={page === 'billing'} icon="vaadin:invoice">
             Billing
           </MenuItem>
         </LinkStyled>
 
-        <LinkStyled to="/support">
+        <LinkStyled to="/profile/support">
           <MenuItem active={page === 'support'} icon="icons8:support">
             Ticket Support
           </MenuItem>

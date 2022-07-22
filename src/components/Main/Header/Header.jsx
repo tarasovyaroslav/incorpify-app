@@ -5,10 +5,10 @@ import { Link } from 'react-router-dom';
 
 import { Icon } from '@iconify/react';
 
-import Button from 'features/Button';
-import Select from 'features/Select/Select';
+import Button from 'common/Button';
+import Select from 'common/Select/Select';
 
-import HeaderContainer from 'features/HeaderContainer';
+import HeaderContainer from 'common/HeaderContainer';
 
 const Container = styled.header`
   /* flex-grow: 1; */

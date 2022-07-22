@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-import Button from 'features/Button';
-import HeaderContainer from 'features/HeaderContainer';
+import Button from 'common/Button';
+import HeaderContainer from 'common/HeaderContainer';
 
 import SidebarFooter from './SidebarFooter';
 import MenuItem from './MenuItem';

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { Navigate, useLocation } from 'react-router-dom';
 
 import styled from 'styled-components';
 
@@ -23,14 +23,22 @@ const Container = styled.div`
 function App() {
   const { pathname } = useLocation();
   const currentPage = pathname.slice(1).split('/')[0];
+
   return (
-    <Container>
-      <Sidebar page={currentPage} />
-      <Main>
-        <Header />
-        <Content />
-      </Main>
-    </Container>
+    <>
+      {localStorage.getItem('user') === null &&
+      currentPage !== 'login' ? (
+        <Navigate to="/login" />
+      ) : (
+        <Container>
+          <Sidebar page={currentPage} />
+          <Main>
+            <Header />
+            <Content />
+          </Main>
+        </Container>
+      )}
+    </>
   );
 }
 

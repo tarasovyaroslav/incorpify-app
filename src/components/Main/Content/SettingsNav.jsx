@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link, useLocation } from 'react-router-dom';
 
-import HeaderContainer from 'features/HeaderContainer';
+import HeaderContainer from 'common/HeaderContainer';
 
 const SettingsHeaderContainer = styled(HeaderContainer)`
   display: flex;

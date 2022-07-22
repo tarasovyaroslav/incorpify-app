@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Button from 'features/Button';
+import Button from 'common/Button';
 
 const AmendmentButton = styled(Button)`
   font-size: 1rem;

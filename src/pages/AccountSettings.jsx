@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import InputMask from 'react-input-mask';
 
-import Card from 'features/Card';
+import Card from 'common/Card';
 
 import { ReactComponent as IconShow } from 'components/Main/Content/AccountSettings/assets/show.svg';
 import { ReactComponent as IconHide } from 'components/Main/Content/AccountSettings/assets/hide.svg';
 import SettingsNav from 'components/Main/Content/SettingsNav';
-import Button from 'features/Button';
+import Button from 'common/Button';
 
 const ContentContainer = styled.form`
   display: flex;

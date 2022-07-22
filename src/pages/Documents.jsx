@@ -8,9 +8,9 @@ import React from 'react';
 import styled from 'styled-components';
 
 import CompanyInfo from 'components/Main/Content/CompanyInfo';
-import Button from 'features/Button';
-import Card from 'features/Card';
-import IconRounded from 'features/IconRounded/IconRounded';
+import Button from 'common/Button';
+import Card from 'common/Card';
+import IconRounded from 'common/IconRounded/IconRounded';
 
 const ContentContainer = styled.div`
   display: flex;

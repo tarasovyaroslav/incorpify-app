@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Button from 'features/Button';
+import Button from 'common/Button';
 
 import CompanyInfo from 'components/Main/Content/CompanyInfo';
 import InfoItem from 'components/Main/Content/Profile/InfoItem';
@@ -11,7 +11,7 @@ import RightItem from 'components/Main/Content/Profile/RightItem';
 import { ReactComponent as StatusIcon } from 'components/Main/Content/Profile/assets/status.svg';
 import { ReactComponent as DateIcon } from 'components/Main/Content/Profile/assets/date.svg';
 import { ReactComponent as OrderIcon } from 'components/Main/Content/Profile/assets/order.svg';
-import Card from 'features/Card';
+import Card from 'common/Card';
 
 const Info = styled.div`
   display: flex;

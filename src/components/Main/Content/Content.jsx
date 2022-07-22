@@ -10,6 +10,7 @@ import Mailbox from 'pages/Mailbox';
 import Billing from 'pages/Billing';
 import Support from 'pages/Support';
 import AccountSettings from 'pages/AccountSettings';
+import Login from 'pages/Login';
 // import Home from 'pages/Home';
 
 const Container = styled.section`
@@ -24,6 +25,7 @@ const Content = () => {
   return (
     <Container>
       <Routes>
+        <Route path="login" element={<Login />} />
         <Route path="profile" element={<Profile />} />
         <Route path="docs" element={<Documents />} />
         <Route path="actions" element={<ActionRequired />} />

@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import CompanyInfo from 'components/Main/Content/CompanyInfo';
-import Card from 'features/Card';
+import Card from 'common/Card';
 
 const ContentContainer = styled.div`
   display: flex;

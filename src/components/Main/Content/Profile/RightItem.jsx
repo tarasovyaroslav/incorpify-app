@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import IconRounded from 'features/IconRounded/IconRounded';
-import Card from 'features/Card';
+import IconRounded from 'common/IconRounded/IconRounded';
+import Card from 'common/Card';
 
 const Container = styled(Card)`
   /* flex-direction: row; */

@@ -10,8 +10,8 @@ const StyledInput = styled.input`
 
   ${(props) => css`
     box-sizing: border-box;
-    max-width: ${props.maxwidth || 'auto'};
     min-width: ${props.minwidth || 'auto'};
+    max-width: ${props.maxwidth || 'none'};
     height: 44px;
     border: 1px solid #bdc6da;
     border-radius: 8px;

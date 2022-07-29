@@ -21,12 +21,15 @@ const colors = {
   cl-sidebar-bottom: #0093c0, */
   'cl-sidebar-background':
     'linear-gradient(0.5turn, #006baa, #0093c0)',
-  'cl-sidebar-selected-item': '#015c8c',
+  'cl-sidebar-selected': '#015c8c',
   'cl-sidebar-text': '#ffffff',
+
+  'cl-header-bg': '#ffffff',
+  'cl-header-divider': '#dbe4f0',
 
   'cl-content-bg': '#f6f8fa',
 
-  'cl-alert-circle': '#e03927',
+  'cl-alert-bg': '#e03927',
   'cl-alert-text': '#ffffff',
 
   'cl-select-bg': '#f2f5fb',

@@ -1,11 +1,9 @@
 import styled, { css } from 'styled-components';
 
 const Container = styled.div`
-  /* width: 440px; */
-  /* display: inline-block; */
   ${({ minwidth, maxwidth }) => css`
-    max-width: ${maxwidth || 'auto'};
     min-width: ${minwidth || 'auto'};
+    max-width: ${maxwidth || 'none'};
   `}
 
   position: relative;

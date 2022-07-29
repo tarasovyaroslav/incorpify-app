@@ -4,15 +4,21 @@ import colors from 'components/Theme/colors';
 
 const StyledCard = styled.div`
   display: flex;
-  /* align-items: center; */
-  background-color: white;
-  border: 1px solid #dbe4f0;
-  border-radius: 8px;
-  width: 252px;
-  height: 96px;
   align-items: center;
+
+  border-radius: 8px;
   padding: 26px 20px;
+
+  ${({ theme }) => css`
+    background-color: ${theme.colors['cl-card-bg']};
+    border: 1px solid ${theme.colors['cl-card-border']};
+  `}
   gap: 12px;
+
+  ${({ width, height }) => css`
+    width: ${width || 'auto'};
+    height: ${height || 'auto'};
+  `}
 
   .card-data {
     display: flex;

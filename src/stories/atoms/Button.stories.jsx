@@ -17,6 +17,9 @@ export default {
 
 const Template = (args) => <Button {...args}>Click me!</Button>;
 
+export const Default = Template.bind({});
+Default.args = {};
+
 export const Primary = Template.bind({});
 Primary.args = {
   primary: true,

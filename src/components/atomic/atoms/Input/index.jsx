@@ -2,8 +2,8 @@ import React from 'react';
 
 import StyledInput from './styles';
 
-const Input = () => {
-  return <StyledInput />;
+const Input = ({ children, ...otherProps }) => {
+  return <StyledInput {...otherProps} />;
 };
 
 export default Input;

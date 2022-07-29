@@ -6,7 +6,7 @@ import Button from 'components/atomic/atoms/Button';
 import Select from 'components/atomic/atoms/Select';
 import Icon from 'components/atomic/atoms/Icon';
 
-import colors from 'res/colors';
+import colors from 'components/Theme/colors';
 import Input from 'components/atomic/atoms/Input';
 import SystemInfoCard from 'components/atomic/molecules/SystemInfoCard';
 

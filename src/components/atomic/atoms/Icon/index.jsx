@@ -36,6 +36,9 @@ import { ReactComponent as ProfileDate } from './assets/Profile/date.svg';
 import { ReactComponent as ProfileOrder } from './assets/Profile/order.svg';
 import { ReactComponent as ProfileStatus } from './assets/Profile/status.svg';
 
+import { ReactComponent as PasswordShow } from './assets/InputPassword/show.svg';
+import { ReactComponent as PasswordHide } from './assets/InputPassword/hide.svg';
+
 let SelectedIcon;
 
 const Icon = ({ icon, ...otherProps }) => {
@@ -135,6 +138,14 @@ const Icon = ({ icon, ...otherProps }) => {
       break;
     case 'profile:status':
       SelectedIcon = <ProfileStatus />;
+      break;
+
+    // Password Input
+    case 'password:show':
+      SelectedIcon = <PasswordShow />;
+      break;
+    case 'password:hide':
+      SelectedIcon = <PasswordHide />;
       break;
 
     default:

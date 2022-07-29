@@ -3,7 +3,7 @@ import StyledCard from './styles';
 
 // import systemInfoItems from './dataItems';
 import Icon from 'components/atomic/atoms/Icon';
-import colors from 'res/colors';
+import colors from 'components/Theme/colors';
 
 const Card = ({ id, icon, title, value }) => {
   return (

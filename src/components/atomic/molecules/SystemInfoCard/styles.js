@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import colors from 'res/colors';
+import colors from 'components/Theme/colors';
 
 const StyledCard = styled.div`
   display: flex;

@@ -9,6 +9,7 @@ function hexToRgba(hexColor, opacity) {
 }
 
 const StyledIcon = styled.div`
+  box-sizing: border-box;
   width: ${({ size, width }) => width || size || '32px'};
   height: ${({ size, height }) => height || size || '32px'};
   svg {

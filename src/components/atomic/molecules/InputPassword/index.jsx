@@ -4,7 +4,8 @@ import Icon from 'components/atomic/atoms/Icon';
 import { Container, HideButton, StyledInput } from './styles';
 
 const InputPassword = ({ maxwidth, minwidth, placeholder }) => {
-  const [isShow, setIsShow] = useState('false');
+  const [isShow, setIsShow] = useState(false);
+
   return (
     <Container maxwidth={maxwidth} minwidth={minwidth}>
       <StyledInput
@@ -12,7 +13,12 @@ const InputPassword = ({ maxwidth, minwidth, placeholder }) => {
         placeholder={placeholder}
       />
 
-      <HideButton onClick={() => setIsShow(!isShow)}>
+      <HideButton
+        onClick={(e) => {
+          e.preventDefault();
+          setIsShow(!isShow);
+        }}
+      >
         {isShow ? (
           <Icon icon="password:hide" style={{ color: '#7C8DB5' }} />
         ) : (

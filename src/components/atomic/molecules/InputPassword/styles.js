@@ -44,7 +44,7 @@ const HideButton = styled.button`
   position: absolute;
   border: none;
   outline: none;
-  right: 0;
+  right: 8px;
   top: 0;
   height: 100%;
 `;

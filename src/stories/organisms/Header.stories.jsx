@@ -28,12 +28,6 @@ const Template = (args) => <Header {...args} />;
 export const Default = Template.bind({});
 Default.args = {};
 
-export const WithNavItems = Template.bind({});
-WithNavItems.args = {};
-
-export const WithFooterItems = Template.bind({});
-WithFooterItems.args = {};
-
 export const InContainer = Template.bind({});
 InContainer.args = {};
 InContainer.decorators = [

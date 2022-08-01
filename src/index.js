@@ -1,7 +1,7 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 // import { Provider } from 'react-redux';
-// import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import Theme from 'components/Theme';
 
 import App from './App';
@@ -14,11 +14,11 @@ const root = createRoot(container);
 root.render(
   // <React.StrictMode>
   // <Provider>
-  // <BrowserRouter>
-  <Theme>
-    <App />
-  </Theme>
-  // </BrowserRouter>
+  <BrowserRouter>
+    <Theme>
+      <App />
+    </Theme>
+  </BrowserRouter>
   // </Provider>
   // </React.StrictMode>
 );

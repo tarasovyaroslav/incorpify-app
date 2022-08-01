@@ -8,6 +8,7 @@ const StyledHeader = styled.div`
   width: 100%;
   height: 84px;
   padding: 20px 42px;
+  gap: 30px;
 
   ${({ theme }) => css`
     background-color: ${theme.colors['cl-header-bg']};
@@ -31,7 +32,7 @@ const SelectContainer = styled.div`
 const HeaderMenu = styled.div`
   display: flex;
   align-items: center;
-  gap: 60px;
+  gap: 42px;
   height: 100%;
   border-left: 1px solid
     ${({ theme }) => theme.colors['cl-header-divider']};

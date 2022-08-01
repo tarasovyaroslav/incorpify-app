@@ -2,6 +2,7 @@ const colors = {
   'cl-text-dark': '#25396f',
   'cl-text-light': '#7c8db5',
   'cl-text-danger': '#ec331e',
+  'cl-text-black': '#2f2f2f',
 
   'cl-active': '#07cea4',
   'cl-active-button-bg': '#07cea4',

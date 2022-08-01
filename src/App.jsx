@@ -1,65 +1,41 @@
 import React from 'react';
-import { Route, Routes, useLocation } from 'react-router-dom';
-import styled from 'styled-components';
+import { Navigate, Route, Routes } from 'react-router-dom';
 
-import Button from 'components/atomic/atoms/Button';
-import Select from 'components/atomic/atoms/Select';
-import Icon from 'components/atomic/atoms/Icon';
+import ProtectedRoute from 'routing/ProtectedRoute';
 
-import colors from 'components/Theme/colors';
-import Input from 'components/atomic/atoms/Input';
-import SystemInfoCard from 'components/atomic/molecules/SystemInfoCard';
-
-import systemInfoItems from 'res/dataItems';
-
-const Container = styled.div`
-  display: flex;
-  /* flex-direction: column; */
-  flex-wrap: wrap;
-  gap: 16px;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(0.5turn, #000000aa, #00000033);
-`;
+import ProfilePage from 'components/atomic/pages/ProfilePage';
+import DocumentsPage from 'components/atomic/pages/DocumentsPage';
+import ActionsPage from 'components/atomic/pages/ActionsPage';
+import ServicesPage from 'components/atomic/pages/ServicesPage';
+import MailboxPage from 'components/atomic/pages/MailboxPage ';
+import BillingPage from 'components/atomic/pages/BillingPage';
+import SupportPage from 'components/atomic/pages/SupportPage';
+import SettingsPage from 'components/atomic/pages/SettingsPage';
+import LoginPage from 'components/atomic/pages/LoginPage';
+import ForgotPasswordPage from 'components/atomic/pages/ForgotPasswordPage';
 
 function App() {
-  //   const { pathname } = useLocation();
-  //   const currentPage = pathname.slice(1).split('/')[0];
+  const user = localStorage.getItem('user');
 
   return (
-    <Container>
-      <Button>Some&nbsp;regular&nbsp;button</Button>
-      <Button primary>Primary&nbsp;button</Button>
-      <Button borderless>Borderless&nbsp;button</Button>
-      <Select
-        options={[
-          {
-            value: 'Innova Labs LLC',
-            label: 'Innova Labs LLC',
-          },
-          {
-            value: 'Some compant name',
-            label: 'Some compant name',
-          },
-        ]}
+    <Routes>
+      <Route element={<ProtectedRoute user={user} />}>
+        <Route path="/" element={<Navigate to="profile" />} />
+        <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/documents" element={<DocumentsPage />} />
+        <Route path="/actions" element={<ActionsPage />} />
+        <Route path="/services" element={<ServicesPage />} />
+        <Route path="/mailbox" element={<MailboxPage />} />
+        <Route path="/billing" element={<BillingPage />} />
+        <Route path="/support" element={<SupportPage />} />
+        <Route path="/settings" element={<SettingsPage />} />
+      </Route>
+      <Route path="/login" element={<LoginPage />} />
+      <Route
+        path="/forgot-password"
+        element={<ForgotPasswordPage />}
       />
-      <Icon
-        icon="documents:ein"
-        size="100px"
-        color={colors['cl-item1']}
-        padding="20px"
-        rounded
-      />
-      <Input />
-      {systemInfoItems.map((item) => (
-        <SystemInfoCard
-          id={item.id}
-          icon={item.icon}
-          title={item.title}
-          value={item.value}
-        />
-      ))}
-    </Container>
+    </Routes>
   );
 }
 

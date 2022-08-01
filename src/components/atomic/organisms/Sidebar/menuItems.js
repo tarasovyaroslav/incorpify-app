@@ -1,7 +1,7 @@
 const navitems = [
   {
     id: 'nav0',
-    to: 'profile',
+    to: '/',
     text: 'My Business',
     icon: 'sidebar:mybusiness',
     home: true,
@@ -9,31 +9,32 @@ const navitems = [
   },
   {
     id: 'nav1',
-    to: 'profile',
+    to: '/profile',
     text: 'Company Profile',
     icon: 'sidebar:profile',
+    separate: 'true',
   },
   {
     id: 'nav2',
-    to: 'docs',
+    to: '/documents',
     text: 'Company Documents',
     icon: 'sidebar:documents',
   },
   {
     id: 'nav3',
-    to: 'actions',
+    to: '/actions',
     text: 'Action Required',
     icon: 'sidebar:actions',
   },
   {
     id: 'nav4',
-    to: 'services',
+    to: '/services',
     text: 'Additional Services',
     icon: 'sidebar:services',
   },
   {
     id: 'nav5',
-    to: 'mail',
+    to: '/mailbox',
     text: 'Mailbox',
     icon: 'sidebar:mailbox',
   },
@@ -42,13 +43,13 @@ const navitems = [
 const footeritems = [
   {
     id: 'footer1',
-    to: 'billing',
+    to: '/billing',
     text: 'Billing',
     icon: 'sidebar:billing',
   },
   {
     id: 'footer2',
-    to: 'support',
+    to: '/support',
     text: 'Ticket Support',
     icon: 'sidebar:support',
   },

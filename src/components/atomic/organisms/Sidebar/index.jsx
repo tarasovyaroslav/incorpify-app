@@ -1,5 +1,6 @@
 import Button from 'components/atomic/atoms/Button';
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 
 import {
   SidebarContainer,
@@ -13,22 +14,28 @@ import {
 } from './styles';
 
 const Sidebar = ({ navitems, footeritems, active }) => {
+  const { pathname } = useLocation();
+  const currentPage = '/' + pathname.slice(1).split('/')[0];
   return (
     <SidebarContainer>
       <SidebarLogo>incorpify</SidebarLogo>
       <SidebarNav>
         {navitems &&
-          navitems.map(({ id, icon, text, to, indicator, home }) => (
-            <SidebarItem
-              key={id}
-              to={to}
-              home={home ? home.toString() : undefined}
-            >
-              <SidebarItemIcon icon={icon} size="24px" />
-              <SidebarItemText>{text}</SidebarItemText>
-              <SidebarItemIndicator indicator={indicator} />
-            </SidebarItem>
-          ))}
+          navitems.map(
+            ({ id, icon, text, to, indicator, home, separate }) => (
+              <SidebarItem
+                key={id}
+                to={to}
+                home={home ? home.toString() : undefined}
+                separate={separate}
+                selected={currentPage === to}
+              >
+                <SidebarItemIcon icon={icon} size="24px" />
+                <SidebarItemText>{text}</SidebarItemText>
+                <SidebarItemIndicator indicator={indicator} />
+              </SidebarItem>
+            )
+          )}
       </SidebarNav>
       <Button primary width="200px">
         Start New Business

@@ -1,8 +1,8 @@
 import Button from 'components/atomic/atoms/Button';
 import Icon from 'components/atomic/atoms/Icon';
 import Select from 'components/atomic/atoms/Select';
-import colors from 'components/Theme/colors';
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import {
   StyledHeader,
@@ -13,25 +13,38 @@ import {
 } from './styles';
 
 const Header = ({ options, alertscount }) => {
+  const navigate = useNavigate();
+
   return (
     <StyledHeader>
       <SelectContainer>
         Select Company
-        <Select options={options} minwidth="260px" />
+        <Select options={options} minwidth="240px" />
       </SelectContainer>
       <HeaderMenu>
         <HeaderNav>
-          <HeaderNavItem to="alerts" alertscount={alertscount}>
+          <HeaderNavItem to="#" alertscount={alertscount}>
             <Icon icon="header:alerts" />
           </HeaderNavItem>
-          <HeaderNavItem to="help">
+          <HeaderNavItem to="#">
             <Icon icon="header:help" />
           </HeaderNavItem>
-          <HeaderNavItem to="settings">
+          <HeaderNavItem to="/settings">
             <Icon icon="header:settings" />
           </HeaderNavItem>
         </HeaderNav>
-        <Button outlined>Sign Out</Button>
+        <Button
+          borderless
+          width="100px"
+          type="button"
+          onClick={(e) => {
+            e.preventDefault();
+            localStorage.removeItem('user');
+            navigate('/login', { replace: true });
+          }}
+        >
+          Sign&nbsp;Out
+        </Button>
       </HeaderMenu>
     </StyledHeader>
   );

@@ -6,7 +6,8 @@ const SidebarContainer = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
-  width: 260px;
+  min-width: 260px;
+  max-width: 260px;
   align-items: center;
 
   ${({ theme }) => css`
@@ -77,6 +78,18 @@ const SidebarItem = styled(Link)`
       background-color: ${theme.colors['cl-sidebar-selected']};
       color: ${theme.colors['cl-active']};
       margin: 8px 0;
+    `}
+
+  ${({ theme, selected }) =>
+    selected &&
+    css`
+      background-color: ${theme.colors['cl-sidebar-selected']};
+    `}
+
+    ${({ theme, separate }) =>
+    separate &&
+    css`
+      margin: 10px 0;
     `}
 `;
 

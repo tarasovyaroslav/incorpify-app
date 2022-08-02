@@ -1,42 +1,66 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins:wght@400;500;600&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins:wght@400;500;600&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Poppins:ital,wght@0,400;0,500;0,600;1,400&display=swap');
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: 'Poppins', sans-serif;
 }
 
 html {
-  --text-dark: #25396f;
-  --text-light: #7c8db5;
-  --text-danger: #ec331e;
+  /* Colors */
+  --cl-text-dark: #25396f;
+  --cl-text-light: #7c8db5;
+  --cl-text-danger: #ec331e;
 
-  --active: #07cea4;
-  --active-button-bg: #07cea4;
-  --active-button-text: #ffffff;
-  --card-border: #dbe4f0;
-  --card-bg: #ffffff;
+  --cl-active: #07cea4;
+  --cl-active-button-bg: #07cea4;
+  --cl-active-button-text: #ffffff;
+  --cl-card-border: #dbe4f0;
+  --cl-card-bg: #ffffff;
 
-  --regular-button-color: #0181b6;
+  --cl-regular-button-color: #0181b6;
 
-  --item1: #07cea4;
-  --item2: #fc782c;
-  --item3: #9b54e1;
-  --item4: #fe4a8b;
-  --item5: #524fe1;
+  --cl-item1: #07cea4;
+  --cl-item2: #fc782c;
+  --cl-item3: #9b54e1;
+  --cl-item4: #fe4a8b;
+  --cl-item5: #524fe1;
 
-  --sidebar-top: #006baa;
-  --sidebar-bottom: #0093c0;
-  --sidebar-selected-item: #015c8c;
+  /* --cl-sidebar-top: #006baa;
+  --cl-sidebar-bottom: #0093c0; */
+  --cl-sidebar-background: linear-gradient(0.5turn, #006baa, #0093c0);
+  --cl-sidebar-selected-item: #015c8c;
+  --cl-sidebar-text: #ffffff;
 
-  --content-bg: #f6f8fa;
+  --cl-content-bg: #f6f8fa;
 
-  --alert-circle: #e03927;
-  --alert-text: #ffffff;
+  --cl-alert-circle: #e03927;
+  --cl-alert-text: #ffffff;
+
+  --cl-select-bg: #f2f5fb;
+  --cl-select-border: #dbe4f0;
+
+  /* fonts */
+  --ft-logo: 700 1.875rem 'Montserrat';
+  --ft-sidebar-item: 500 0.875rem 'Poppins';
+  --ft-select-title: 700 1rem 'Poppins';
+  --ft-company-title: 700 2rem 'Poppins';
+  --ft-company-type: 500 1.125rem 'Poppins';
+
+  --ft-regular-text: 500 1rem 'Poppins';
+  --ft-date-text: italic 400 1rem 'Poppins';
+  --ft-ticket-number: italic 400 1rem 'Poppins';
+  --ft-data-text: 400 1rem 'Poppins';
+  --ft-system-info: 500 1.25rem 'Poppins';
+  --ft-info-text: 400 1rem 'Poppins';
+
+  --ft-payment-info: 700 1rem 'Poppins';
+  --ft-logout-text: 700 1rem 'Poppins';
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* margin: 0; */
@@ -49,8 +73,8 @@ code {
 }
 
 #root {
-  display: flex;
-  justify-content: center;
+  /* display: flex; */
+  /* justify-content: center; */
   width: 100vw;
   /* max-width: 1440px; */
   height: 100vh;

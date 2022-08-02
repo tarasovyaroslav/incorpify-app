@@ -12,7 +12,7 @@ import {
   HeaderNavItem,
 } from './styles';
 
-const Header = ({ options, alertscount }) => {
+const Header = ({ options, alertscount, user, handler }) => {
   const navigate = useNavigate();
 
   return (
@@ -39,6 +39,7 @@ const Header = ({ options, alertscount }) => {
           type="button"
           onClick={(e) => {
             e.preventDefault();
+            handler(null);
             localStorage.removeItem('user');
             navigate('/login', { replace: true });
           }}

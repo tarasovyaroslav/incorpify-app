@@ -45,7 +45,6 @@ const Icon = ({ icon, ...otherProps }) => {
   switch (icon) {
     // Billing
     case 'billing:view':
-      // SelectedIcon = <BillingView {...otherProps} />;
       SelectedIcon = <BillingView />;
       break;
     case 'billing:date':

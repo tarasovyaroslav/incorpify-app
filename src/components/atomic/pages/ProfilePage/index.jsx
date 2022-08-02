@@ -44,7 +44,12 @@ const ProfilePage = () => {
     <Container>
       <Sidebar navitems={navitems} footeritems={footeritems} />
       <ContentContainer>
-        <Header />
+        <Header
+          options={[
+            { label: '123', value: '123' },
+            { label: '123123', value: '123123' },
+          ]}
+        />
         <MainContainer>
           <TitleContainer>
             <Title>Company Name</Title>

@@ -1,8 +1,9 @@
 import React from 'react';
 import { components } from 'react-select';
 
-import { ReactComponent as TriangleIcon } from './assets/dropdown.svg';
 import { SelectStyled } from './styles';
+
+import { ReactComponent as TriangleIcon } from './assets/dropdown.svg';
 
 const DropdownIndicator = (innerProps) => {
   return (

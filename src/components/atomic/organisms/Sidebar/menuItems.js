@@ -1,7 +1,7 @@
 const navitems = [
   {
     id: 'nav0',
-    to: '/',
+    to: '/profile',
     text: 'My Business',
     icon: 'sidebar:mybusiness',
     home: true,

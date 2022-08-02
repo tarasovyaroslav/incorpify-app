@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import Button from 'components/atomic/atoms/Button';
@@ -12,7 +12,12 @@ import {
 } from './styles';
 
 const ForgorPasswordPage = () => {
-  const navigate = useNavigate();
+  let navigate = useNavigate();
+  const user = localStorage.getItem('user');
+
+  useEffect(() => {
+    user && navigate('/', { replace: true });
+  }, [user, navigate]);
 
   return (
     <StyledContainer>
@@ -23,7 +28,7 @@ const ForgorPasswordPage = () => {
             Forgot your password? <br />
             Enter your e-mail below for us to send you a reset code
           </span>
-          <Input placeholder="Email" type="email" />
+          <Input required placeholder="Email" type="email" />
 
           <Button
             borderless

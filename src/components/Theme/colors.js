@@ -35,6 +35,7 @@ const colors = {
 
   'cl-select-bg': '#f2f5fb',
   'cl-select-border': '#dbe4f0',
+  'cl-select-hover': '#d8e3fa',
 };
 
 export default colors;
